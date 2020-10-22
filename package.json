@@ -1,0 +1,25 @@
+{
+  "name": "nlw03",
+  "version": "1.0.0",
+  "description": "Repositório de estudo de desenvolvimento Web da Next Level Week #3, Rocketseat.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallaceskt/happy-nlw03.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wallaceskt/happy-nlw03/issues"
+  },
+  "homepage": "https://github.com/wallaceskt/happy-nlw03#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.6"
+  }
+}
