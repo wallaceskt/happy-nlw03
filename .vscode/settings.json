@@ -1,0 +1,25 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "orphanage",
+            "group": "nlw",
+            "database": "${workspaceFolder:nlw03}/src/database/database.sqlite"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MariaDB",
+            "name": "jr-empresa",
+            "database": "newsletter",
+            "username": "root"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
