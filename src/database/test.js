@@ -1,8 +1,24 @@
 const Database = require('./db')
+const SaveOrphanage = require('./saveOrphanage')
 
 Database.then(async db => {
     // Inserir dados na tabela
-    await db.run(`
+    await SaveOrphanage(db, {
+        lat: "-3.74346",
+        lng: "-38.4837",
+        name: "Casa de Acolhimento Casa de Jeremias",
+        about: "Organização não governamental em fortaleza, Ceará.",
+        whatsapp: "(85) 932627220",
+        images: [
+            "https://images.unsplash.com/photo-1603138461768-be254fb9a9ee?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
+            "https://images.unsplash.com/photo-1603138461768-be254fb9a9ee?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
+        ].toString(),
+        instructions: "Venha como se sentir a vontade e traga muito amor e paciência para dar.",
+        opening_hours: "Horário de visitas: Das 18h até 8h",
+        open_on_weekends: "1"
+    })
+
+    /*await db.run(`
         INSERT INTO orphanages (
             lat,
             lng,
@@ -48,7 +64,7 @@ Database.then(async db => {
             "Horário de visitas: Das 18h até 8h",
             "0"
         );
-    `)
+    `)*/
 
     // Consultar dados na tabela
     const selectedOrphanages = await db.all("SELECT * FROM orphanages;")
@@ -57,4 +73,7 @@ Database.then(async db => {
     // Consultar somento 1 orphanato pelo id
     const selectedOrphanage = await db.all('SELECT * FROM orphanages WHERE id = "1"')
     console.log(selectedOrphanage)
+
+    // Deletar um dado da tabela
+    console.log(await db.run("DELETE FROM orphanages WHERE id = 4"))
 })

@@ -86,3 +86,18 @@ function toggleSelect(event) {
     const input = document.querySelector('[name="open_on_weekends"]')
     input.value = button.dataset.value
 }
+
+// Validar o formulário (se lat e lng estão preenchidos)
+function validate(event) {
+
+    const inputLat = document.querySelector('input[name=lat]')
+    const inputLng = document.querySelector('input[name=lng]')
+
+    if (inputLat.value == "" || inputLng.value == "") {
+        
+        event.preventDefault()
+        alert('Defina uma posição no mapa!')
+        
+    }
+
+}
